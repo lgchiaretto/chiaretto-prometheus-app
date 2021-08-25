@@ -27,7 +27,7 @@ spec:
         deploymentconfig: {{ .Release.Name }}
     spec:
       containers:
-        image: "quay.io/chiaretto/prometheus-example-app:{{ .Values.chiaretto.version }}"
+      - image: "quay.io/chiaretto/prometheus-example-app:{{ .Values.chiaretto.version }}"
         imagePullPolicy: Always
         name: {{ .Release.Name }}
         ports:
