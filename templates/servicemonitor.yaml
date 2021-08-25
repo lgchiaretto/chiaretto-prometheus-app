@@ -1,16 +1,16 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: chiaretto-app
+  name: {{ .Release.Name }}
   labels:
     team: chiaretto
     app: prometheus
 spec:
   selector:
     matchLabels:
-      app: chiaretto-app
+      app: {{ .Release.Name }}
   endpoints:
-  - port: "8081-tcp"
+  - port: "8080-tcp"
     path: /metrics
   selector:
     matchLabels:
