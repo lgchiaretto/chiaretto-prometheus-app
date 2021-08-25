@@ -1,17 +1,14 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ .Release.Name }}
   labels:
-    team: chiaretto
-    app: prometheus
+    k8s-app: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
+  endpoints:
+  - interval: 30s
+    port: web
+    scheme: http
   selector:
     matchLabels:
       app: {{ .Release.Name }}
-  endpoints:
-  - port: "8080-tcp"
-    path: /metrics
-  selector:
-    matchLabels:
-      app: prometheus
