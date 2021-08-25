@@ -9,6 +9,8 @@ spec:
   - interval: 30s
     port: web
     scheme: http
+  namespaceSelector:
+    any: true
   selector:
     matchLabels:
       app: {{ .Release.Name }}
