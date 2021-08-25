@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   groups:
-  - name: example
+  - name: {{ .Release.Name }}
     rules:
     - alert: VersionAlert
       expr: version{job="{{ .Release.Name }}"} == 0
