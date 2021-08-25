@@ -8,10 +8,10 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   ports:
-  - name: 8080-tcp
-    port: 8080
+  - name: 8081-tcp
+    port: 8081
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8081
   selector:
     deploymentconfig: {{ .Release.Name }}
   sessionAffinity: None
