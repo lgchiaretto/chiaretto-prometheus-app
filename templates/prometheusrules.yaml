@@ -6,5 +6,5 @@ spec:
   groups:
   - name: {{ .Release.Name }}
     rules:
-    - alert: VersionAlert
-      expr: version{job="{{ .Release.Name }}"} == 0
+    - alert: TooMany502Errors
+      expr: 100 * (sum by(instance) (rate(http_requests_total{namespace="chiaretto-prometheus-app",code="502"}[5m])) / sum by(instance) (rate(http_requests_total{namespace="chiaretto-prometheus-app"}[5m]))) > 10
