@@ -7,4 +7,4 @@ spec:
   - name: {{ .Release.Name }}
     rules:
     - alert: TooMany502Errors
-      expr: 100 * (sum by(instance) (rate(http_requests_total{namespace="chiaretto-prometheus-app",code="502"}[5m])) / sum by(instance) (rate(http_requests_total{namespace="chiaretto-prometheus-app"}[5m]))) > 10
+      expr: 100 * (sum by(instance) (rate(http_requests_total{namespace="{{ .Release.Name }}",code="502"}[5m])) / sum by(instance) (rate(http_requests_total{namespace="{{ .Release.Name }}"}[5m]))) > 10
