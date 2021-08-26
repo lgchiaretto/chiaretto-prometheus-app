@@ -2,3 +2,4 @@ chiaretto:
   version: 'latest'
   route: apps.ocp4a.chiaret.to
   env: default
+  team: chiaretto
