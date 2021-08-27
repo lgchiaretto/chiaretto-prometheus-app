@@ -1,7 +1,7 @@
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
 metadata:
-  name: {{ .Release.Name }}
+  name: chiaretto-prometheus-app2
   labels:
     app: grafana
 spec:
@@ -114,7 +114,7 @@ spec:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(sum by(instance) (rate(http_requests_total{namespace=\"{{ .Release.Name }}\",code=\"502\"}[5m]))) * 100",
+              "expr": "(sum by(instance) (rate(http_requests_total{namespace=\"chiaretto-prometheus-app2\",code=\"502\"}[5m]))) * 100",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -124,7 +124,7 @@ spec:
               "step": 10
             },
             {
-              "expr": "(sum by(instance) (rate(http_requests_total{namespace=\"{{ .Release.Name }}\",code=\"200\"}[5m]))) * 100",
+              "expr": "(sum by(instance) (rate(http_requests_total{namespace=\"chiaretto-prometheus-app2\",code=\"200\"}[5m]))) * 100",
               "interval": "",
               "legendFormat": "",
               "refId": "B"
@@ -210,6 +210,8 @@ spec:
       },
       "timezone": "UTC",
       "title": "HTTP Requests",
+      "uid": "mnfPpG4nk",
+      "version": 9
     }
-  name: {{ .Release.Name }}.json
+  name: chiaretto-prometheus-app2.json
 
