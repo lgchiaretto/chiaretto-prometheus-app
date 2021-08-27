@@ -5,7 +5,6 @@ metadata:
   labels:
     app: grafana
 spec:
-  customFolderName: Chiaretto
   json: >-
     {
       "annotations": {
