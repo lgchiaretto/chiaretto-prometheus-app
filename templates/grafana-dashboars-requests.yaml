@@ -118,7 +118,6 @@ spec:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "\{\{workload\}\} - \{\{workload_type\}\}",
               "legendLink": null,
               "refId": "A",
               "step": 10
