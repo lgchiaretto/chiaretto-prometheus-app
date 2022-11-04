@@ -5,7 +5,8 @@ metadata:
     app: {{ .Release.Name }}
     app.kubernetes.io/component: {{ .Release.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
-  name: chiaretto-https
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Name }}
 spec:
   host: "{{ .Release.Name }}.{{ .Values.chiaretto.route }}"
   port:

@@ -4,6 +4,7 @@ metadata:
   labels:
     k8s-app: {{ .Release.Name }}
   name: {{ .Release.Name }}
+  namespace: {{ .Release.Name }}
 spec:
   endpoints:
   - interval: 30s
