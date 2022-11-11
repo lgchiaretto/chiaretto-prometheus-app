@@ -1,5 +1,5 @@
 chiaretto:
   version: 'latest'
-  route: apps.ocp4a.chiaret.to
+  route: apps.hub.chiaret.to
   env: default
   team: chiaretto
